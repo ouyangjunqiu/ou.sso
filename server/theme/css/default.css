@@ -1,0 +1,269 @@
+@charset "UTF-8";
+body {
+    margin:0px;
+    padding: 0px;
+    font: normal 12px 微软雅黑,Tahoma, Arial, Helvetica, sans-serif;
+    color: #993300;
+}
+
+img {
+    border:0px;
+    margin:0px 5px 0px 5px;
+    cursor:pointer;
+}
+label {
+    width: 100px;
+}
+fieldset {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+h1, h3 {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+    font-family: "宋体";
+    font-size: 26px;
+
+
+    font-weight: bold;
+    color: #3333CC;
+    text-decoration: none;
+}
+form, div, ul, li, dt, dd {
+    margin:0;
+    padding:0;
+}
+input,select,textarea {
+    font-size: 12px;
+}
+table {
+    font-size: 12px;
+    border-collapse: collapse;
+    line-height:24px;
+}
+td {
+    padding: 0px 5px;
+    /*border: 1px solid silver;*/
+    word-break: break-all;
+}
+
+p{
+    display:block;
+}
+
+
+.rule{
+    float: left;
+    padding-left: 2px;
+    margin-left:0px;
+}
+
+.ready {
+    margin-top: 30px;
+}
+
+.login_container {
+    background: url(../images/login_bar.jpg) repeat-x;
+    border-top: 1px solid grey;
+    height: 600px;
+}
+
+.login-form {
+    background: url(../images/login_bottom.jpg) no-repeat center;
+    border-top: 1px solid grey;
+    height: 600px;
+    margin-top: -11px
+    /*-webkit-transform: scale(1.2);*/
+}
+
+#div-login {
+    width: 412px;
+    height: 420px;
+    position: relative;
+    margin: 68px auto;
+    background: url(../images/login_frame.png) no-repeat;
+}
+
+#login-form {
+    height: 420px;
+    width: 411px;
+    position: absolute;
+    left: 0;
+}
+
+.login_title {
+    font-size: 24px;
+    padding: 19px;
+    color: white;
+}
+
+#div-login .verification-code {
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+}
+
+#LoginForm_username, #LoginForm_password {
+    width: 300px;
+    height: 24px;
+    border: 1px solid #DFDFDF;
+    border-radius: 3px;
+    padding: 12px 46px 12px 10px;
+    margin-top: 5px;
+    background-color: #F0EEF1;
+}
+
+#LoginForm_password {
+    margin: 5px 0;
+}
+
+#LoginForm_verifyCode {
+    width: 125px;
+    height: 42px;
+    padding-left: 10px;
+    font-size: 18px;
+    border-radius: 3px;
+    border: 1px solid #DFDFDF;
+    background-color: #F0EEF1;
+    position: absolute;
+    left: 27px;
+}
+
+.required {
+    position: relative;
+    top: 30px;
+    left: 10px;
+}
+
+.user_img, .pwd_img, .code_refresh, .code_judge {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.code_judge {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 330px;
+    top: 5px;
+}
+
+.code_refresh {
+    background: url(../images/login_icon.png) no-repeat -122px -10px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 290px;
+    top: 5px;
+}
+
+dl img {
+    margin-left: -60px;
+}
+
+.login_foot {
+    margin: 10px;
+    position: relative;
+}
+
+.login_foot label {
+    color: black;
+    font-size: 14px;
+    margin-left: -265px;
+}
+
+.sub {
+    width: 356px;
+    height: 50px;
+    background: #0182C6;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-family: '微软雅黑';
+    cursor: pointer;
+}
+
+#LoginForm_rememberMe {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 14px;
+    border: 1px solid #d5d5d5;
+    background: #F0EEF1;
+    margin: 0;
+}
+
+#LoginForm_verifyCode_em_ {
+    position: relative;
+    top: -52px;
+}
+
+#code_msg {
+    margin-top: -33px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.user_img {
+    background: url(../images/login_icon.png) no-repeat -25px -10px;
+    position: absolute;
+    right: 32px;
+    top: 93px;
+    *top: 100px;
+}
+
+.pwd_img {
+    background: url(../images/login_icon.png) no-repeat -70px -10px;
+    position: absolute;
+    right: 36px;
+    top: 160px;
+    _top: 177px;
+    *top: 177px;
+}
+
+#login_footer {
+    color: #4C4D4F;
+}
+
+#login_footer div {
+    margin: 10px 0px;
+}
+
+#current-login-user {
+    margin-top: 15px;
+}
+
+.right_code {
+    background: url(../images/login_icon.png) no-repeat -220px -10px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 330px;
+    top: 5px;
+}
+
+.wrong_code {
+    background: url(../images/login_icon.png) no-repeat -170px -10px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 330px;
+    top: 5px;
+}
+
+#current-login-user a {
+    text-decoration: none;
+}
+
+#wrong_tips {
+    position: relative;
+    top: -33px;
+    margin-bottom: -25px;
+}
