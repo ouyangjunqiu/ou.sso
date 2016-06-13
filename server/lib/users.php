@@ -53,7 +53,7 @@ function GetUserByToken($token){
 function login($username,$password){
     if(LoginValidate($username,$password,$loginUser)) {
         $_SESSION["user"] = $loginUser;
-        @setcookie("loginToken", $loginUser["id"], 30*24*3600, "/", "." . $_SERVER['HTTP_HOST']);
+        @setcookie("loginToken", $loginUser["id"], 30*24*3600, "/");
         return true;
     }
     return false;
