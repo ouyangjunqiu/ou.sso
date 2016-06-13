@@ -1,15 +1,7 @@
 <?php
-/**
- * 根据token获取用户信息
- * */
-function GetUserByToken($token){
-    return $token;
-}
-
-@ini_set('session.gc_maxlifetime', 30*24*3600);
-@ini_set('session.use_cookies',1);
-
-@session_start();
+require_once dirname(__FILE__)."/lib/functions.php";
+require_once dirname(__FILE__)."/lib/users.php";
+env_init();
 
 $callback = $_REQUEST["callbackparam"];
 if(isset($_SESSION["user"]) && !empty($_SESSION["user"])){
