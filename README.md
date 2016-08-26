@@ -23,3 +23,8 @@ _*注：phpsso client js为客户端 [login.js](https://github.com/ouyangjunqiu/
 ｜－ server *服务端，主要登录验证程序，简单案列*
 
 ｜－ client *客户端，需要部署到需要验证的应用中*
+
+####安全性
+验证都是通过cookie传递，相对安全性一般。
+
+目标网址与验证服务器无双向验证，相对简单。
