@@ -20,7 +20,7 @@ _*注：phpsso client js为客户端 [login.js](https://github.com/ouyangjunqiu/
 
 ####目录结构说明：
 
-｜－ server *服务端，主要登录验证程序，简单案列*
+｜－ server *服务端，主要登录验证程序*
 
 ｜－ client *客户端，需要部署到需要验证的应用中*
 
