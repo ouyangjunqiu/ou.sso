@@ -13,10 +13,10 @@ SSO是在多个应用系统中，用户只需要登录一次就可以访问所�
 1. 用户访问目标网站 (profile.phpsso.com)
 2. 目标网站(profile.phpsso.com)执行phpsso client js
 3. phpsso client js发送异步请求向验证服务器（login.phpsso.com）发送验证请求
-4. 验证服务器（login.phpsso.com）未登陆，已登陆跳转到**步骤6**。
-5. phpsso client js执行跳转登陆界面(login.phpsso.com)，输入用户名、密码验证。
-6. 验证服务器（login.phpsso.com）验证通过，phpsso client js成功执行回调事件
+4. 验证服务器（login.phpsso.com）未登陆，phpsso client js执行跳转登陆界面(login.phpsso.com)，输入用户名、密码验证。已登陆跳转到**步骤5**。
+5. 验证服务器（login.phpsso.com）验证通过，phpsso client js成功执行回调事件
 
+_*注：phpsso client js为客户端 [login.js](https://github.com/ouyangjunqiu/phpsso/blob/master/client/login.js)_
 
 ####目录结构说明：
 
