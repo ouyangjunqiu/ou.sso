@@ -50,6 +50,6 @@ function ref_set($ref){
 function ref_get(){
     if(empty($_SESSION["ref"]))
         return "user.php";
-    return $_SESSION["ref"];
+    return urldecode($_SESSION["ref"]);
 }
 
