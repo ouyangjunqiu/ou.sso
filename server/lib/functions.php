@@ -40,7 +40,7 @@ function env_init(){
  */
 function ref_set($ref){
     if(isset($ref) && !empty($ref)){
-        $_SESSION["ref"] = $ref;
+        $_SESSION["ref"] = urlencode($ref);
     }
 }
 
