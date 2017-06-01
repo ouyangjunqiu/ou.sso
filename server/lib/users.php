@@ -2,7 +2,7 @@
 /**
  * @file users.php
  * @author ouyangjunqiu
- * @version Created by 16/6/13 16:51
+ * @since 16/6/13 16:51
  */
 
 /**
@@ -11,20 +11,12 @@
  * @param $user
  * @return bool
  */
-function LoginValidate($username,$password,&$user){
-    try{
+function LoginValidate($username, $password, &$user)
+{
 
-        $client = new SoapClient("http://oa2.da-mai.com/obpm/services/UserService?wsdl");
-
-        $res = $client->validateUser("广州大麦信息科技有限公司",$username,$password,0);
-        if(!empty($res)) {
-
-            $res = json_decode(json_encode($res), true);
-            $user = array_merge($res, array("username" => $res["name"]));
-            return true;
-        }
-    }catch(SOAPFault $e){
-        return false;
+    if ($username == "admin" && md5($password) == md5("admin")) {
+        $user = array("username" => $username, "password" => md5("admin"));
+        return true;
     }
 
     return false;
@@ -34,13 +26,11 @@ function LoginValidate($username,$password,&$user){
  * @param $token
  * @return array|null
  */
-function GetUserByToken($token){
-    $client = new SoapClient("http://oa2.da-mai.com/obpm/services/UserService?wsdl");
-
-    $res = $client->getUser($token);
-    if(!empty($res)) {
-        $res = json_decode(json_encode($res), true);
-        return array_merge($res, array("username" => $res["name"]));
+function GetUserByToken($token)
+{
+    if ($token == "admin") {
+        $user = array("username" => "admin", "password" => md5("admin"));
+        return $user;
     }
     return null;
 }
@@ -50,11 +40,34 @@ function GetUserByToken($token){
  * @param $password
  * @return bool
  */
-function login($username,$password){
-    if(LoginValidate($username,$password,$loginUser)) {
+function login($username, $password)
+{
+    if (LoginValidate($username, $password, $loginUser)) {
         $_SESSION["user"] = $loginUser;
-        setcookie("loginToken", $loginUser["id"], time()+30*24*3600,"/",$_SERVER["HTTP_HOST"]);
+        $time = time();
+        setcookie('__u', $username, time() + 30 * 24 * 3600, time() + 30 * 24 * 3600, "/", $_SERVER["HTTP_HOST"]);
+        setcookie('__t', $time, time() + 30 * 24 * 3600, time() + 30 * 24 * 3600, "/", $_SERVER["HTTP_HOST"]);
+        setcookie('__token', md5(base64_encode($time . $username . $loginUser["password"] . $time)), time() + 30 * 24 * 3600, "/", $_SERVER["HTTP_HOST"]);
         return true;
+    }
+    return false;
+}
+
+/**
+ *
+ */
+function validateCookie()
+{
+    $u = $_COOKIE["__u"];
+    $t = $_COOKIE["__t"];
+    $token = $_COOKIE["__token"];
+
+    $user = GetUserByToken($u);
+    if ($user) {
+        if ($token == md5(base64_encode($t . $user["username"] . $user["password"] . $t))) {
+            $_SESSION["user"] = $user;
+            return true;
+        }
     }
     return false;
 }

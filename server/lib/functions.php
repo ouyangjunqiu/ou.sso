@@ -5,8 +5,7 @@
  * @version Created by 16/6/13 16:49
  */
 /**
- * Suppose, you are browsing in your localhost
- * http://localhost/myproject/index.php?id=8
+ *
  */
 function base_url()
 {
